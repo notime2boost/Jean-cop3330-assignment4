@@ -1,8 +1,13 @@
+/*
+    UCF COP 3330 FALL 2021 Assignemtn 3 Solution
+    Copyright 2021 Christopher Jean
+ */
+
 package Ex41;
-
 import java.io.*;
-
 import java.util.*;
+
+
 
 // defining the class NameSorter
 
