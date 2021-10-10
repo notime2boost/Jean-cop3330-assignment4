@@ -1,13 +1,12 @@
 /*
-    UCF COP 3330 FALL 2021 Assignemtn 3 Solution
-    Copyright 2021 Christopher Jean
+ *  UCF COP3330 Fall 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Jean
  */
+package ex41;
 
-package Ex41;
 import java.io.*;
+
 import java.util.*;
-
-
 
 // defining the class NameSorter
 
@@ -60,7 +59,7 @@ class NameSorter {
 
         // creating an scanner object to read from input file
 
-        Scanner inputFile = new Scanner(new File("C:\\Users\\cjean\\Desktop\\Cop3330\\Fall\\Jean-cop333-assignment3_\\src\\main\\java\\Ex41\\exercise41_input.txt"));
+        Scanner inputFile = new Scanner(new File("src/main/exercise41_input.txt"));
 
         // declaring an ArrayList for storing the names
 
