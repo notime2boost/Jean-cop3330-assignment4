@@ -8,84 +8,82 @@ import java.io.*;
 
 import java.util.*;
 
-// defining the class NameSorter
 
-class NameSorter {
+class NameSorter{
 
-    // defining the readNames() function to read the data from Scanner object to the ArrayList
+    //  read the data from Scanner object to the ArrayList
 
     public static void readNames(Scanner input, ArrayList<String> names) {
 
-        // reading the data till the file has nextLine
+        // reading the data
 
-        while (input.hasNextLine()) {
+        while (input.hasNextLine()){
 
-            // adding the read line to the list of names
+            // adding data to the list of names
 
             names.add(input.nextLine());
         }
     }
 
-    // defining the function to print the names in the file
 
-    public static void outputNames(ArrayList<String> names) throws IOException {
 
-        // creating a FileWriter for the output file
+    public static void outputNames(ArrayList<String> names) throws IOException{
+
+        // creating the output file
 
         FileWriter output = new FileWriter("exercise41_output.txt");
 
-        // writing the header of the output file about how many names are read from the input file
+        // writing output file
 
         output.write("Total of " + names.size() + " names\n");
 
         output.write("--------------------\n");
 
-        // writing the names in the file after the header and separator
+        // writing the names in the file
 
 
-        for (String i : names) {
+        for (String i : names){
 
             output.write(i + "\n");
 
         }
 
-        // closing the output FileWriter to avoid memory leakage
+        // closing the output
 
         output.close();
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException{
 
-        // creating an scanner object to read from input file
+        //to read  input file
 
-        Scanner inputFile = new Scanner(new File("src/main/exercise41_input.txt"));
+        Scanner inputFile = new Scanner(new File("exercise41_input.txt"));
 
-        // declaring an ArrayList for storing the names
+        //  storing the names
 
         ArrayList<String> names = new ArrayList<String>();
 
-        // reading the names from the input file by calling the readNames() function
+        // reading the names from the input file
 
         readNames(inputFile, names);
 
-        // sorting the list of names using sort function
+        // sorting the list of names
 
         Collections.sort(names, String.CASE_INSENSITIVE_ORDER);
 
-        // closing the scanner object after reading the file
+        // closing scanner object
 
         inputFile.close();
 
-        // writing the required data to the output file
+        // writing output file
 
         try {
             outputNames(names);
         }
 
-        // if any exception is raised in writing to the output file then printing the exception on the console
 
-        catch (Exception e) {
+        catch (Exception e){
             System.out.println(e);
         }
     }

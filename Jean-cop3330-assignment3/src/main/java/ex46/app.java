@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Jean
+ */
+
 package ex46;
 
 import java.io.File;
@@ -8,31 +13,23 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-// tester class
+
 
 class Word_Frequency_Finder {
 
-    // main method
-
     public static void main(String[] args) throws FileNotFoundException {
 
-        // create an object of ReadInputFile file
+
 
         ReadInputFile rf = new ReadInputFile();
 
-        //read file
-
         rf.readfile();
 
-        // get map
 
         HashMap<String, Integer> map = rf.getMap();
 
-        // create an object of PrintReport class and
 
         PrintReport pr = new PrintReport(map);
-
-        // print it on screen
 
         pr.printScreen();
 
@@ -40,41 +37,28 @@ class Word_Frequency_Finder {
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////
 
-// class named ReadInputFile to reaf file
 
 class ReadInputFile{
 
-    // instance variable
 
-    private final Scanner sc;
-    private final HashMap<String, Integer> map;
-
-    // constructor
+    private Scanner sc;
+    private File file;
+    private HashMap<String, Integer> map;
 
     public ReadInputFile() throws FileNotFoundException {
 
-        // initialize instance variable
-
-        // pass the path to the file as a parameter
-        File file = new File("src/main/exercise46_input.txt");
+        file = new File("exercise46_input.txt");
         sc = new Scanner(file);
         map = new HashMap<String,Integer>();
 
     }
 
-    // read file
-
     public void readfile() {
 
-        // use try and finally to avoid exceptions
+        try{
 
-        try
-        {
-
-            while( sc.hasNext() )
-            {
+            while( sc.hasNext() ){
 
                 // read input whole line
 
@@ -82,15 +66,17 @@ class ReadInputFile{
 
                 // split it by spaces
 
-                String[] arr = input.split(" ");
+                String arr[] = input.split(" ");
 
                 // using for loop
 
-                for (String key : arr) {
+                for(int i=0;i<arr.length;i++){
+
+                    String key = arr[i];
 
                     // if key is already in map then
 
-                    if (map.containsKey(key)) {
+                    if(map.containsKey(key)){
 
                         // update value by 1
 
@@ -115,14 +101,12 @@ class ReadInputFile{
 
             }
         }
-        finally
-        {
+        finally {
             sc.close();
         }
 
     }
 
-//   method for return map
 
     public HashMap<String, Integer> getMap(){
 
@@ -132,15 +116,12 @@ class ReadInputFile{
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////
-
-//class named PrintReport
 
 class PrintReport{
 
-    // instance variable map
 
-    private final HashMap<String, Integer> map;
+
+    private HashMap<String, Integer> map;
 
     // constructor
 
@@ -159,9 +140,9 @@ class PrintReport{
 
         // declare arrays to store keys and values
 
-        String[] keys = new String[map.size()];
+        String keys[] = new String[map.size()];
 
-        Integer[] values = new Integer[map.size()];
+        Integer values[] = new Integer[map.size()];
 
         int k=0;
 
@@ -177,9 +158,9 @@ class PrintReport{
 
         // declare another arrays of String and Integer to Store values
 
-        int[] tempvalues = new int[map.size()];
+        int tempvalues[] = new int[map.size()];
 
-        String[] tempkeys = new String[map.size()];
+        String tempkeys[] = new String[map.size()];
 
         // duplicate values arrays to tempvalues
 

@@ -1,10 +1,18 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solution
+ *  Copyright 2021 Christopher Jean
+ */
 package ex43;
 
 import java.io.*;
 import java.util.Scanner;
-class WebSiteGenerator{
-    public static void main(String[] args)
-    {
+
+class WebSiteGenerator {
+
+    public static void main(String[] args) {
+
+        // Created scanner to take info from user
+
         Scanner SC = new Scanner(System.in);
         String currentPath, author, siteName;
         char js = 'N';
@@ -21,11 +29,13 @@ class WebSiteGenerator{
         currentPath += "\\"+siteName;
         File website = new File(currentPath);
         boolean websiteCreated = website.mkdir();
-        if(websiteCreated)
-        {
+        if(websiteCreated) {
+
             System.out.println("Created " + currentPath);
-            try
-            {
+            try {
+
+                //making the folders for our sudo website
+
                 FileWriter skeletonWriter = new FileWriter(new File(currentPath+"\\index.html"));
                 skeletonWriter.write("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n");
                 skeletonWriter.write("\t<meta author=\""+author+"\">\n");
@@ -33,40 +43,40 @@ class WebSiteGenerator{
                 skeletonWriter.write("</head>\n<body>\n\n</body>\n</html>");
                 skeletonWriter.close();
                 System.out.println("Created " + currentPath+"\\index.html");
-                if(js == 'y' || js == 'Y')
-                {
+                if(js == 'y' || js == 'Y') {
+
                     File jsFolder = new File(currentPath+"\\js");
                     boolean jsCreated = jsFolder.mkdir();
-                    if(jsCreated)
-                    {
+                    if(jsCreated){
+
                         System.out.println("Created " + jsFolder+"\\");
                     }
-                    else
-                    {
+                    else{
+
                         System.out.println("Js folder not created!!");
                     }
                 }
-                if(css == 'y' || css == 'Y')
-                {
+                if(css == 'y' || css == 'Y'){
+
                     File cssFolder = new File(currentPath+"\\css");
                     boolean cssCreated = cssFolder.mkdir();
-                    if(cssCreated)
-                    {
+                    if(cssCreated){
+
                         System.out.println("Created " + cssFolder+"\\");
                     }
-                    else
-                    {
+                    else{
+
                         System.out.println("CSS folder not created!!");
                     }
                 }
             }
-            catch(IOException e)
-            {
+            catch(IOException e){
+
                 System.out.println("index.html not created as required!!");
             }
         }
-        else
-        {
+        else{
+
             System.out.println("Website folder not created!!");
         }
         SC.close();
