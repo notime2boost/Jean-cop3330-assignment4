@@ -20,7 +20,7 @@ class Word_Frequency_Finder {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-
+        // create a scanner
         ReadInputFile rf = new ReadInputFile();
 
         rf.readfile();
@@ -48,6 +48,7 @@ class ReadInputFile{
 
     public ReadInputFile() throws FileNotFoundException {
 
+        //input file for read
         file = new File("exercise46_input.txt");
         sc = new Scanner(file);
         map = new HashMap<String,Integer>();
@@ -68,13 +69,11 @@ class ReadInputFile{
 
                 String arr[] = input.split(" ");
 
-                // using for loop
 
                 for(int i=0;i<arr.length;i++){
 
                     String key = arr[i];
 
-                    // if key is already in map then
 
                     if(map.containsKey(key)){
 
@@ -88,7 +87,7 @@ class ReadInputFile{
 
                     }
 
-                    // else put it in the map
+
 
                     else {
 
@@ -123,22 +122,22 @@ class PrintReport{
 
     private HashMap<String, Integer> map;
 
-    // constructor
+
 
     public PrintReport( HashMap<String, Integer> map) {
 
-//       initialize constructor
+
 
         this.map = map;
 
     }
 
 
-    // method for print histogram on screen
+
 
     public void printScreen() {
 
-        // declare arrays to store keys and values
+        // arrays for values
 
         String keys[] = new String[map.size()];
 
@@ -146,7 +145,7 @@ class PrintReport{
 
         int k=0;
 
-        // iterate map ans store array
+        // store arrays
 
         for (Entry<String, Integer> entry : map.entrySet()) {
 
@@ -156,13 +155,13 @@ class PrintReport{
 
         }
 
-        // declare another arrays of String and Integer to Store values
+
 
         int tempvalues[] = new int[map.size()];
 
         String tempkeys[] = new String[map.size()];
 
-        // duplicate values arrays to tempvalues
+
 
         for(int i=0;i<values.length;i++) {
 
@@ -171,12 +170,12 @@ class PrintReport{
         }
 
 
-        // reverse sort values array
+
 
         Arrays.sort(values, Collections.reverseOrder());
 
 
-        // sort keys array according to values array and store in tempkeys
+
 
         for(int i=0; i<map.size();i++) {
 
@@ -198,7 +197,7 @@ class PrintReport{
 
         System.out.println();
 
-        // print hostogram
+        // print
 
         for(int i=0;i<map.size();i++) {
 
