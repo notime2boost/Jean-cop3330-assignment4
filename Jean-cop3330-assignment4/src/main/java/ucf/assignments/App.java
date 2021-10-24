@@ -5,68 +5,27 @@
 
 package ucf.assignments;
 
-class MasterTodoList{
-
-    // List of all current to do list, 100 capacity
-}
-class TodoListInfo {
-
-    // Title , Max Capacity 100 items, due date
+class main{
+    // launch the application
 }
 
-class AddTodoList{
-
-    //Makes a new To do list
+class start{
+    // load and display FXML file
 }
 
-class RemoveTodoList{
-
-    //Removes a existing To do list
+class item{
+    // item id , Name , Description , date
+    // additem() , deleteitem(), edititem(),
 }
 
-class editTitle{
-
-    //edits title of existing to do list
+class itemList{
+    //List name, list quantity MAX 100,List id
+    //addList(), deleteList(),editList()
 }
 
-class addItem{
-
-    //add item name , due date, description
-}
-
-class removeItem{
-
-    //removes item from existing to do list
-}
-
-class editItem{
-
-    // edits item name, or due date, or description
-}
-
-class statusItem{
-
-    // checks status of item if complete or incomplete in a to do list
-}
-
-class saveItems{
-
-    //saves all items in existing to do list
-}
-
-class saveList{
-
-    //saves all list to external location
-}
-
-class loadItems{
-
-    //loads items to a single to do list
-}
-
-class loadList{
-
-    // loads multiple list from external storage
+class itemStatus{
+    //List ID, Item ID,
+    // CompleteItem(),IncompleteItem(),
 }
 
 
