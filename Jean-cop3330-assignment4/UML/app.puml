@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Assignment 4 UML
+
+class main
+class itemStatus
+class item
+class itemList
+interface start
+
+start <|-- main
+itemList <|-- item
+item <|-- itemStatus
+start <|-- item
+start <|-- itemStatus
+start <|-- itemList
+
+class main{
+    start();
+
+}
+
+interface start{
+    gui();
+
+}
+
+
+class itemList{
+    char listName;
+    int listQuantity;
+    int listId;
+
+    addList();
+    deleteList();
+    editList();
+}
+
+class itemStatus{
+    int listId;
+    int itemId;
+
+    completeItem();
+    incompleteItem();
+}
+
+class item{
+    int itemId;
+    char itemName;
+    char itemDescr;
+    int itemDate;
+
+    additem();
+    deleteitem();
+    edititem();
+}
+
+@enduml

@@ -15,17 +15,39 @@ class start{
 
 class item{
     // item id , Name , Description , date
-    // additem() , deleteitem(), edititem(),
+    int itemId;
+    char itemName;
+    char itemDescr;
+    int itemDate;
+
+    // additem() , deleteitem(), edititem()
+
+    additem();
+    deleteitem();
+    edititem();
 }
 
 class itemList{
     //List name, list quantity MAX 100,List id
+    char listName;
+    int listQuantity;
+    int listId;
+
     //addList(), deleteList(),editList()
+    addList();
+    deleteList();
+    editList();
+
 }
 
 class itemStatus{
     //List ID, Item ID,
-    // CompleteItem(),IncompleteItem(),
+    int listId;
+    int itemId;
+
+    // CompleteItem(),IncompleteItem()
+    completeItem();
+    incompleteItem();
 }
 
 
